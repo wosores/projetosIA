@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Área do cliente Fio &amp; Afeto: consulte seus dados e acompanhe suas encomendas.">
+  <title>Minha conta | Fio &amp; Afeto</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Fio &amp; Afeto — página inicial">
+        <span class="logo-icon" aria-hidden="true">🧵</span>
+        <span>Fio <span class="logo-highlight">&amp; Afeto</span></span>
+      </a>
+
+      <div class="header-actions">
+        <a class="btn btn-outline header-back" href="index.html">← Voltar à loja</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="account-page">
+    <div class="container account-shell">
+      <p class="account-loading" id="account-loading">Carregando sua conta…</p>
+
+      <div id="account-content" hidden>
+        <div class="account-heading">
+          <p class="section-tag">Área do cliente</p>
+          <h1 id="account-greeting">Olá!</h1>
+          <p>Consulte seus dados e acompanhe suas encomendas.</p>
+        </div>
+
+        <div class="account-grid">
+          <section class="account-card" aria-labelledby="account-data-title">
+            <h2 id="account-data-title">Dados pessoais</h2>
+
+            <dl class="account-details">
+              <div>
+                <dt>Nome</dt>
+                <dd id="account-name">—</dd>
+              </div>
+              <div>
+                <dt>E-mail</dt>
+                <dd id="account-email">—</dd>
+              </div>
+              <div>
+                <dt>Cliente desde</dt>
+                <dd id="account-since">—</dd>
+              </div>
+            </dl>
+
+            <a class="btn btn-outline" href="index.html#destaques">Continuar comprando</a>
+          </section>
+
+          <section class="account-card" aria-labelledby="account-orders-title">
+            <h2 id="account-orders-title">Minhas encomendas</h2>
+
+            <div class="account-empty">
+              <span class="account-empty-icon" aria-hidden="true">📦</span>
+              <p>Você ainda não tem encomendas.</p>
+              <a class="link-more" href="index.html#destaques">Ver peças →</a>
+            </div>
+          </section>
+        </div>
+
+        <div class="account-actions">
+          <button class="btn btn-outline" id="logout-button" type="button">Sair da conta</button>
+        </div>
+
+        <p class="form-message" id="account-message" role="alert" hidden></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer site-footer-simple">
+    <div class="container footer-bottom">
+      <p>&copy; <span id="current-year">2026</span> Fio &amp; Afeto. Todos os direitos reservados.</p>
+      <ul class="footer-legal">
+        <li><a href="index.html#contato">Privacidade</a></li>
+        <li><a href="index.html#contato">Termos de uso</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/conta.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Entre na sua conta Fio &amp; Afeto ou cadastre-se para acompanhar encomendas, salvar peças favoritas e finalizar compras com mais rapidez.">
+  <title>Entrar ou criar conta | Fio &amp; Afeto</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Fio &amp; Afeto — página inicial">
+        <span class="logo-icon" aria-hidden="true">🧵</span>
+        <span>Fio <span class="logo-highlight">&amp; Afeto</span></span>
+      </a>
+
+      <div class="header-actions">
+        <a class="btn btn-outline header-back" href="index.html">← Voltar à loja</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="auth-page">
+    <div class="container auth-shell">
+      <div class="auth-heading">
+        <p class="section-tag">Área do cliente</p>
+        <h1>Bem-vindo ao ateliê</h1>
+        <p>
+          Entre na sua conta para acompanhar encomendas e finalizar compras, ou
+          crie uma conta em poucos segundos.
+        </p>
+      </div>
+
+      <div class="auth-grid">
+        <!-- Login -->
+        <section class="auth-card" id="login" aria-labelledby="login-title">
+          <h2 id="login-title">Já sou cliente</h2>
+          <p class="auth-card-text">Acesse sua conta com e-mail e senha.</p>
+
+          <form id="login-form" class="auth-form" action="/api/auth/login" method="post">
+            <div class="form-field">
+              <label for="login-email">E-mail</label>
+              <input
+                id="login-email"
+                name="email"
+                type="email"
+                placeholder="seu@email.com"
+                autocomplete="email"
+                required
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="login-password">Senha</label>
+              <input
+                id="login-password"
+                name="senha"
+                type="password"
+                placeholder="Sua senha"
+                autocomplete="current-password"
+                minlength="6"
+                required
+              >
+            </div>
+
+            <div class="form-options">
+              <label class="checkbox-label">
+                <input type="checkbox" name="lembrar" value="true">
+                <span>Lembrar de mim</span>
+              </label>
+              <a class="link-more" href="mailto:contato@fioeafeto.com.br?subject=Recuperar%20senha">Esqueci a senha</a>
+            </div>
+
+            <p class="form-message" id="login-message" role="alert" hidden></p>
+
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Entrar</button>
+          </form>
+
+          <p class="auth-alt">
+            Ainda não tem conta?
+            <a href="#cadastro">Cadastre-se grátis</a>
+          </p>
+        </section>
+
+        <!-- Cadastro -->
+        <section class="auth-card auth-card-register" id="cadastro" aria-labelledby="cadastro-title">
+          <h2 id="cadastro-title">Criar minha conta</h2>
+          <p class="auth-card-text">Leva menos de um minuto. É grátis.</p>
+
+          <form id="register-form" class="auth-form" action="/api/auth/register" method="post">
+            <div class="form-field">
+              <label for="register-name">Nome completo</label>
+              <input
+                id="register-name"
+                name="nome"
+                type="text"
+                placeholder="Seu nome"
+                autocomplete="name"
+                minlength="3"
+                required
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="register-email">E-mail</label>
+              <input
+                id="register-email"
+                name="email"
+                type="email"
+                placeholder="seu@email.com"
+                autocomplete="email"
+                required
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="register-password">Senha</label>
+              <input
+                id="register-password"
+                name="senha"
+                type="password"
+                placeholder="Crie uma senha"
+                autocomplete="new-password"
+                minlength="6"
+                required
+              >
+              <small class="password-hint">Use pelo menos 6 caracteres.</small>
+            </div>
+
+            <div class="form-field">
+              <label for="register-confirm">Confirmar senha</label>
+              <input
+                id="register-confirm"
+                name="confirmar_senha"
+                type="password"
+                placeholder="Repita a senha"
+                autocomplete="new-password"
+                minlength="6"
+                required
+              >
+            </div>
+
+            <label class="checkbox-label checkbox-terms">
+              <input type="checkbox" name="termos" value="true" required>
+              <span>
+                Li e aceito os
+                <a href="index.html#contato">termos de uso</a> e a
+                <a href="index.html#contato">política de privacidade</a>.
+              </span>
+            </label>
+
+            <p class="form-message" id="register-message" role="alert" hidden></p>
+
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Criar conta</button>
+          </form>
+
+          <p class="auth-alt">
+            Já tem uma conta?
+            <a href="#login">Entrar agora</a>
+          </p>
+        </section>
+      </div>
+
+      <ul class="auth-benefits" aria-label="Vantagens de ter uma conta">
+        <li>🚚 Acompanhe suas encomendas</li>
+        <li>❤️ Salve suas peças favoritas</li>
+        <li>⚡ Finalize compras mais rápido</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer site-footer-simple">
+    <div class="container footer-bottom">
+      <p>&copy; <span id="current-year">2026</span> Fio &amp; Afeto. Todos os direitos reservados.</p>
+      <ul class="footer-legal">
+        <li><a href="index.html#contato">Privacidade</a></li>
+        <li><a href="index.html#contato">Termos de uso</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/auth.js" defer></script>
+</body>
+</html>
